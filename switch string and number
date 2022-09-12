@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int n,r,sum=0,temp;
+	char b[100];
+	int i,length,q=0;
+	int choice;
+	cout<<"provide your choice";
+	cout<<"1.number\n 2.string";
+	cin>>choice;
+	switch(choice){
+		case 1:
+			cout<<"enter the number:"<<endl;
+			cin>>n;
+			temp=n;
+			while(n>0){
+				r=n%10;
+				sum=sum*10+r;
+				n=n/10;}
+				if(temp==sum){
+					cout<<"it is a palindrome";}
+				else{
+					cout<<"it is not a palindrome";}
+					break;
+		case 2:
+			cout<<"enter the string:";
+			cin>>b;
+			length= strlen(b);
+			for(i=0;i<length;i++){
+				if(b[i]!=b[length-i-1]){
+					q=1;
+					break;}}
+			    if(q){
+			    	cout<<"it is not a palindrome"<<endl;
+				}
+				else{
+					cout<<"it is palindrome"<<endl;}
+					break;
+		default:
+			cout<<"enter the valid string or number";
+			break;
+	}return 0;
+}
